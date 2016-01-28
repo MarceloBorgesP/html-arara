@@ -1,0 +1,133 @@
+{% extends '/layouts/application.html' %}
+
+{% block content %}
+<div class="topbar mdl-shadow--2dp">
+  <div class="content">
+    <h2 class="crumbly">
+      <a href="#">Documentation</a>
+      <i class="material-icons">navigate_next</i>
+      <a href="#">Components</a>
+      <i class="material-icons">navigate_next</i>
+      <a  class="active" href="#">Stepper</a>
+    </h2>
+  </div>
+</div>
+  <div class="content">
+    <p>HTML Arara provides a stepper. It conveys progress through numbered steps and may also be used for navigation.</p>
+    <section class="demo">
+      <div class="toolbar">
+        <div class="toolbar-title">
+          <h3>Sample Stepper</h3>
+          <button id="stepper_ex1" class="show-buddy mdl-button mdl-js-button mdl-button--icon">
+            <i  class="material-icons">code</i>
+          </button>
+          <span class="mdl-tooltip" for="stepper_ex1">Source Code</span>
+        </div>
+      </div>
+      <section class="doc-example mdl-shadow--2dp hide" data-toggle="stepper_ex1">
+<pre class="prettyprint">
+  <code>
+    &lt;ul class=&quot;stepper mdl-shadow--2dp&quot;&gt;
+      &lt;li class=&quot;step completed&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;mdl-button mdl-js-button&quot;&gt;
+          &lt;span&gt;&lt;i class=&quot;material-icons&quot;&gt;done&lt;/i&gt;&lt;/span&gt;
+          &lt;h5&gt;Step 1&lt;/h5&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;step completed&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;mdl-button mdl-js-button&quot;&gt;
+          &lt;span&gt;&lt;i class=&quot;material-icons&quot;&gt;done&lt;/i&gt;&lt;/span&gt;
+          &lt;h5&gt;Step 2&lt;/h5&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;step active&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;mdl-button mdl-js-button&quot;&gt;
+          &lt;span&gt;3&lt;/span&gt;
+          &lt;h5&gt;Step 3&lt;/h5&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;step&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;mdl-button mdl-js-button&quot; disabled&gt;
+          &lt;span&gt;4&lt;/span&gt;
+          &lt;h5&gt;Step 4&lt;/h5&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  </code>
+</pre>
+      </section>
+
+      <div class="demo-content">
+        <p>To show the user the some process steps, you should use the stepper, which allow him to know the steps he already completed, the one he is currently on, and the ones he will still go through.</p>
+        <hr></hr>
+        <ul class="stepper mdl-shadow--2dp">
+          <li class="step completed">
+            <a class="mdl-button mdl-js-button">
+              <span><i class="material-icons">done</i></span>
+              <h5>Step 1</h5>
+            </a>
+          </li>
+          <li class="step completed">
+            <a href="#" class="mdl-button mdl-js-button">
+              <span><i class="material-icons">done</i></span>
+              <h5>Step 2</h5>
+            </a>
+          </li>
+          <li class="step active">
+            <a href="#" class="mdl-button mdl-js-button">
+              <span>3</span>
+              <h5>Step 3</h5>
+            </a>
+          </li>
+          <li class="step">
+            <a href="#" class="mdl-button mdl-js-button" disabled>
+              <span>4</span>
+              <h5>Step 4</h5>
+            </a>
+          </li>
+        </ul>
+      </div>
+      </section>
+
+    <section class="demo">
+      <div class="toolbar">
+        <div class="toolbar-title">
+          <h3>Customize your Stepper</h3>
+        </div>
+      </div>
+      <div class="demo-content">
+        <p>By default, the stepper has 4 steps, in case you want more or less steps you just need to create or delete a step: </p>
+      <section class="doc-example mdl-shadow--2dp">
+<pre class="prettyprint">
+  <code>
+      &lt;li class=&quot;step&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;mdl-button mdl-js-button&quot; &gt;
+          &lt;span&gt;5&lt;/span&gt;
+          &lt;h5&gt;New Step&lt;/h5&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+  </code>
+</pre>
+      </section>
+      <hr></hr>
+
+        <p>And add a new css rule: </p>
+      <section class="doc-example mdl-shadow--2dp">
+<pre class="prettyprint">
+  <code>
+    .step {
+      width: 20%
+    }
+  </code>
+</pre>
+      </section>
+      <p>The new rule must correspond to the number of steps you want. Have in mind that we are thinking in a scale of 100%. So if you want 5 steps, each step should have 20% of the total width.</p>
+
+      </div>
+    </section>
+  </div>
+{% endblock %}
+
+{% block javascript %}
+<script src="javascripts/page.js"></script>
+{% endblock %}

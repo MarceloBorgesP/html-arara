@@ -1,0 +1,262 @@
+h1, h2, h3, h4, h5, h6
+	margin-bottom: 1rem
+	margin-top: 1rem
+
+a 
+	color: #ffffff
+	text-decoration: none
+
+p 
+	font-size: 1.15rem
+	font-weight: 400
+	letter-spacing: 0.010em
+	line-height: 1.6em
+	margin: 0.8em 0 1.6em
+
+ul
+	list-style: none
+	-webkit-padding-start: 0px
+
+.no_margin
+	margin: 0
+
+.sidebar
+	background-color: $dark-primary-color
+	width: 275px
+	position: absolute
+	left: 0px
+	top: 0px
+	bottom: 0px
+	display: flex
+	flex-direction: column
+	position: fixed
+	top: 0
+
+.sidebar-content
+	button
+		border-bottom: 1px solid $light-primary-color
+	ul
+		-webkit-transition: max-height .4s ease-in-out
+		-moz-transition: max-height .4s ease-in-out
+		transition: max-height .4s ease-in-out
+		max-height: 10000px
+		list-style: none
+		-webkit-padding-start: 0px
+		overflow-x: hidden
+	li 
+		a
+			min-width: 100%
+	*
+		color: #ffffff
+		width: 100%
+		text-align: left
+	> button
+		position: relative
+		i
+			position: absolute
+			text-align: right
+			right: 10px
+			top: 3px
+
+.sidebar-item
+	text-transform: none
+
+.doc-logo
+	color: white
+	text-align: center
+	font-weight: 400
+	font-size: 26px
+	padding-top: 100px
+
+.doc-example
+	-webkit-transition: max-height .8s ease-in-out
+	-moz-transition: max-height .8s ease-in-out
+	transition: max-height .8s ease-in-out
+	max-height: 10000px
+	overflow: hidden
+	pre.prettyprint
+		overflow-x: auto
+		margin: 0
+		border: 0 none
+		background: $light-primary-color
+
+.header-image
+	padding: 0 0 16px
+
+#page-content
+	margin-left: 275px
+	position: relative
+
+@media (max-width: 960px)
+  .sidebar
+    left: -275px
+  #page-content, footer
+  	margin-left: 0
+
+.content
+	max-width: 864px
+	margin: 16px
+	margin-top: 100px
+
+.content > *
+	-webkit-box-flex: 1 1 auto
+	-webkit-flex: 1 1 auto
+	-moz-box-flex: 1 1 auto
+	-moz-flex: 1 1 auto
+	-ms-flex: 1 1 auto
+	flex: 1 1 auto
+
+.demo 
+	border-radius: 4px
+	margin-bottom: 16px
+	flex: 1 1 auto
+	border-radius: 4px
+	margin-bottom: 16px
+	-webkit-transition: 0.02s padding cubic-bezier(0.35, 0, 0.25, 1)
+	transition: 0.02s padding cubic-bezier(0.35, 0, 0.25, 1)
+	position: relative
+	padding-bottom: 0
+
+.toolbar 
+	background-color: $primary-color
+	color: rgba(255,255,255,0.87)
+	border-radius: 3px 3px 0 0
+	box-shadow: 0 1px rgba(255, 255, 255, 0.1)
+
+.toolbar-title
+	font-size: 20px
+	letter-spacing: .005em
+	box-sizing: border-box
+	font-weight: 400
+	display: -webkit-flex
+	display: -ms-flexbox
+	display: flex
+	-webkit-align-items: center
+	-ms-flex-align: center
+	align-items: center
+	-webkit-flex-direction: row
+	-ms-flex-direction: row
+	flex-direction: row
+	width: 100%
+	height: 64px
+	max-height: 64px
+	padding: 0 16px
+	margin: 0
+	justify-content: space-between
+	h3
+		font-size: 1.8rem
+	i
+		float: right
+
+footer
+	margin-left: 275px
+	padding: 16px 32px
+	text-align: left
+	font-size: small
+	border-top: 1px solid $divider-color
+
+.demo-content 
+	padding: 16px
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12)
+
+.demo-title
+	font-size: 20px
+	font-weight: 500
+	letter-spacing: .005em
+
+.stepper
+	list-style: none
+	display: inline-flex
+	width: 100%
+	padding: 0px
+	-webkit-padding-start: 0px
+	.step
+		width: 25%
+		float: left
+		position: relative
+		overflow: hidden
+		a
+			padding: 30px 0 30px 20px
+			display: inline-flex
+			height: 24px
+			text-transform: none
+			z-index: 1
+			background: #ffffff
+			width: 100%
+		span
+			background: $divider-color
+			padding: 0px 8px
+			border-radius: 13px
+			color: #ffffff
+			line-height: 25px
+			.material-icons 
+				font-size: 17px
+		h5 
+			font-size: 15px
+			margin: 0
+			padding: 4px 8px
+			color: $secondary-text
+
+		&.active, &.completed
+			span
+				background: $primary-color
+			h5
+				color: $primary-text
+		&.completed span 
+			padding: 0px 4px
+		&::after
+			border-top: 1px solid #B6B6B6
+			content: ""
+			left: 10px
+			margin-left: 96px
+			position: absolute
+			top: 42px
+			width: 50%
+			z-index: 1
+		&:not(:first-child)
+			&.before
+				border: 0
+		&:last-child::after
+		  display: none
+
+.topbar
+	background: #f6f6f6
+	color: #202020
+	z-index: 3
+	font-size: 20px
+	min-height: 64px
+	width: 100%
+	position: fixed
+	top: 0
+	.content
+		max-width: 864px
+		padding: 0
+		margin: 0 24px
+		width: auto
+		height: 64px
+		max-height: 64px
+		display: -webkit-flex
+		display: -ms-flexbox
+		display: flex
+		-webkit-align-items: center
+		-ms-flex-align: center
+		align-items: center
+
+.crumbly
+	font-size: 18px
+	font-weight: 400
+	line-height: 32px
+	*
+		vertical-align: middle
+		color: $secondary-text
+	.active
+		cursor: default
+
+.toolbar-code
+	background: $dark-primary-color
+	.toolbar-title
+		font-size: 16px
+		height: 40px
+
+.hide
+	max-height: 0 !important

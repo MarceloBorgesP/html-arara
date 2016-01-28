@@ -4,5 +4,6 @@
 public
 Desktop.ini
 node_modules
+bower_components
 **/generated/_icons.sass
 npm-debug.log

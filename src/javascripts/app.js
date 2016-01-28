@@ -1,19 +1,31 @@
-import './asyncModules'
-import exclaimify from './exclaimify'
+import prettyCode from '../../bower_components/google-code-prettify/bin/run_prettify.min.js'
+import '../../bower_components/material-design-lite/material.min.js'
+import '../../bower_components/jquery/dist/jquery.min.js'
 
-const button = document.getElementById('button')
-
-const alertAsyncMessage = function() {
-  // CommonJS async syntax webpack magic
-  require.ensure([], function() {
-    const message = require("./asyncMessage")
-    alert(exclaimify(message))
-  })
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      if (oldonload) {
+        oldonload();
+      }
+      func();
+    }
+  }
 }
 
-console.log(`
-  asset references like this one:
-    images/gulp.png
-  get updated in js too!`)
+addLoadEvent(function() {
+    prettyCode.prettyPrint();
+});
 
-button.addEventListener('click', alertAsyncMessage)
+
+function init() {
+  $('.show-buddy').click(function() {
+    var list = $("[data-toggle=" + this.id);
+    list.toggleClass('hide');
+  });
+}
+
+$(document).ready(init);

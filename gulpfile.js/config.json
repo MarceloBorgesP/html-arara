@@ -22,7 +22,7 @@
       "extractSharedJs": true,
       "entries": {
         "app": ["./app.js"],
-        "page": ["./page.js"]
+        "page": ["./app.js"]
       },
       "extensions": ["js"]
     },
